@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import styled, { injectGlobal } from 'styled-components';
 import CustomNavbar from './components/custom-navbar';
+import Home from './components/home';
 
 injectGlobal`
   /* Styling Bootstrap's Navbar */
@@ -69,7 +70,6 @@ injectGlobal`
   html {
     position: relative;
     min-height: 100%;
-    background-color: #fafafa;
   }
 
   body {
@@ -109,6 +109,7 @@ class App extends React.Component {
       <BrowserRouter>
         <AppWrapper>
           <CustomNavbar />
+          <Route exact={true} path="/" component={Home} />
           <Footer>
             <FooterText>Made by Carlos Ramírez <i className="fa fa-copyright" aria-hidden="true" /> 2017</FooterText>
           </Footer>
