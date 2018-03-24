@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import styled, { injectGlobal } from 'styled-components';
 import CustomNavbar from './components/custom-navbar';
 import Home from './components/home';
+import Projects from './components/projects';
 
 injectGlobal`
   /* Styling Bootstrap's Navbar */
@@ -77,8 +78,8 @@ injectGlobal`
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", 
     "Fira Sans", "Droid Sans", "Helvetica Neue", 
     sans-serif;
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    /* Padding bottom by footer height */
+    padding-bottom: 80px;
     background-color: #fafafa;
   }
 `;
@@ -110,6 +111,7 @@ class App extends React.Component {
         <AppWrapper>
           <CustomNavbar />
           <Route exact={true} path="/" component={Home} />
+          <Route exact={true} path="/projects" component={Projects} />
           <Footer>
             <FooterText>Made by Carlos Ramírez <i className="fa fa-copyright" aria-hidden="true" /> 2017</FooterText>
           </Footer>
