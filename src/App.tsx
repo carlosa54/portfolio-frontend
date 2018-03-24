@@ -20,6 +20,9 @@ injectGlobal`
   .navbar a:hover {
     color: #abaab7 !important;
   }
+  .navbar .active {
+    color: #abaab7 !important;
+  }
   /* Desktops and laptops ----------- */
   @media only screen 
   and (min-width : 1224px) {
