@@ -7,6 +7,7 @@
     "@fortawesome/react-fontawesome": "^0.0.17",
     "apisauce": "^0.14.3",
     "bootstrap": "^4.0.0",
+    "lodash": "^4.17.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",

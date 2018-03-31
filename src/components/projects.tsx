@@ -3,6 +3,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Container } from 'reactstrap';
 import { fetchProjects } from '../utils/api';
+import Spinner from './common/spinner';
 
 const ProjectWrapper = styled.div`
 	display: flex;
@@ -108,7 +109,7 @@ export default class Projects extends React.PureComponent<any, State> {
                 <h1 style={{ verticalAlign: 'middle' }}>Projects</h1>
                 <hr />
                 {this.state.isFetching ?
-                    <p className="text-center"><i className="fa fa-refresh fa-spin fa-3x fa-fw" /></p>
+                    <Spinner />
                     :
                     <ProjectGrid projects={this.state.projects} match={this.props.match} />}
             </Container>
