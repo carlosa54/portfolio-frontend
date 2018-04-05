@@ -12,11 +12,14 @@ class CustomNavbar extends React.PureComponent<any, any> {
             showNavbar: false
         };
     }
-    toggleNavbar = (e) => {
-        e.preventDefault();
+    toggleNavbar = () => {
         this.setState({
             showNavbar: !this.state.showNavbar
         });
+    }
+    toggleFromNavLink = () => {
+        // Hides Collapse on NavLink click using mobile. This prevents navbar re-renders on desktop.
+        return this.state.showNavbar && this.toggleNavbar();
     }
     render() {
         return (
@@ -28,19 +31,19 @@ class CustomNavbar extends React.PureComponent<any, any> {
                     <NavbarToggler onClick={this.toggleNavbar} />
                     <Collapse navbar={true} isOpen={this.state.showNavbar} style={{ textAlign: 'center' }}>
                         <Nav className="ml-md-auto" navbar={true}>
-                            <NavLinkN tag={RouterLink} exact={true} to="/">
+                            <NavLinkN onClick={this.toggleFromNavLink} tag={RouterLink} exact={true} to="/">
                                 <NavItem>Home</NavItem>
                             </NavLinkN>
-                            <NavLinkN tag={RouterLink} to="/projects">
+                            <NavLinkN onClick={this.toggleFromNavLink} tag={RouterLink} to="/projects">
                                 <NavItem>Projects</NavItem>
                             </NavLinkN>
-                            <NavLinkN tag={RouterLink} to="/skills">
+                            <NavLinkN onClick={this.toggleFromNavLink} tag={RouterLink} to="/skills">
                                 <NavItem>Skills</NavItem>
                             </NavLinkN>
-                            <NavLinkN tag={RouterLink} to="/experience">
+                            <NavLinkN onClick={this.toggleFromNavLink} tag={RouterLink} to="/experience">
                                 <NavItem>Experience</NavItem>
                             </NavLinkN>
-                            <NavLinkN tag={RouterLink} to="/about">
+                            <NavLinkN onClick={this.toggleFromNavLink} tag={RouterLink} to="/about">
                                 <NavItem>About</NavItem>
                             </NavLinkN>
                         </Nav>
