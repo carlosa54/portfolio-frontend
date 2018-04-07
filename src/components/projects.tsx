@@ -106,7 +106,7 @@ export default class Projects extends React.PureComponent<any, State> {
         }
         return (
             <Container>
-                <h1 style={{ verticalAlign: 'middle' }}>Projects</h1>
+                <h1 style={{ paddingTop: 5 }}>Projects</h1>
                 <hr />
                 {this.state.isFetching ?
                     <Spinner />

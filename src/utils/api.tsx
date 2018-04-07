@@ -18,7 +18,7 @@ export function getSkills() {
 }
 
 export function getWorks() {
-    return api.get('/works/');
+    return api.get('/works/?ordering=-from_date');
 }
 
 export function getWorkDetail(id) {

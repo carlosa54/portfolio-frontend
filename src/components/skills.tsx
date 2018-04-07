@@ -44,7 +44,7 @@ export default class Skills extends React.PureComponent<Props, any> {
         const { skills } = this.state;
         return (
             <Container>
-                <h1>Skills</h1>
+                <h1 style={{ paddingTop: 5 }}>Skills</h1>
                 <hr />
                 {!_.isEmpty(skills) ?
                     <Container>

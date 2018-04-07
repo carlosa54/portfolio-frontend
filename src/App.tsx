@@ -5,6 +5,7 @@ import CustomNavbar from './components/custom-navbar';
 import Home from './components/home';
 import Projects from './components/projects';
 import Skills from './components/skills';
+import Experience from './components/experience';
 
 injectGlobal`
   /* Styling Bootstrap's Navbar */
@@ -117,8 +118,9 @@ class App extends React.Component {
           <Route exact={true} path="/" component={Home} />
           <Route exact={true} path="/projects" component={Projects} />
           <Route exact={true} path="/skills" component={Skills} />
+          <Route exact={true} path="/experience" component={Experience} />
           <Footer>
-            <FooterText>Made by Carlos Ramírez <i className="fa fa-copyright" aria-hidden="true" /> 2017</FooterText>
+            <FooterText>Made by Carlos Ramírez <i className="fa fa-copyright" aria-hidden="true" /> {(new Date()).getFullYear()}</FooterText>
           </Footer>
         </AppWrapper>
       </BrowserRouter>
