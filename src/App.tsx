@@ -37,13 +37,8 @@ injectGlobal`
   
   @media (min-width: 768px) {
     .navbar {
-      padding-top: 20px;
       height: 90px;
       background: #111 !important;
-    }
-  
-    .navbar-collapse {
-      margin-top: -1px;
     }
   
     .navbar-nav.navbar-center {
@@ -54,11 +49,7 @@ injectGlobal`
   }
   
   /* smartphones, iPhone, portrait 480x320 phones */
-  @media (min-width:320px)  {
-    .navbar-brand {
-      padding-top: 20px;
-    }
-  
+  @media (min-width:320px)  {  
     .navbar-toggle {
         margin-top: 12px;
     }
