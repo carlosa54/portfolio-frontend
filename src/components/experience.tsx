@@ -4,6 +4,7 @@ import { getWorks } from '../utils/api';
 import Spinner from './common/spinner';
 import styled from 'styled-components';
 import { MONTH_NAMES } from '../utils/constants';
+import Header from './common/header';
 
 interface State {
     works: any;
@@ -20,12 +21,12 @@ const ExperienceContainer = styled(Container)`
 
 const WorkLogo = styled.img`
     max-height: 50px;
-    padding-bottom: 5px;
+    margin-bottom: 5px;
     margin-right: 10px;
 `;
 
 const WorkDescription = styled.p`
-    text-align: justify;
+    text-align: left;
     white-space: pre-wrap;
     line-height: 1.5;
     font-size: 14px;
@@ -76,8 +77,7 @@ export default class Experience extends React.PureComponent<any, State> {
         }
         return (
             <Container>
-                <h1 style={{ paddingTop: 5 }}>Experience</h1>
-                <hr />
+                <Header headerTitle="Experience" />
                 {this.state.isFetching ?
                     <Spinner />
                     :
@@ -89,9 +89,10 @@ export default class Experience extends React.PureComponent<any, State> {
                             <Card key={idx} style={{ marginBottom: 40 }}>
                                 <CardBody>
                                     <div style={{ display: 'flex', alignItems: 'center'}}>
-                                    {work.logo && <WorkLogo alt={work.name} src={work.logo} />}
+                                    {work.logo && <WorkLogo className="rounded" alt={work.name} src={work.logo} />}
                                     <WorkName>{work.name}</WorkName>
                                     </div>
+                                    <p>{work.position}</p>
                                     <hr />
                                     <WorkDescription>{work.description}</WorkDescription>
                                 </CardBody>

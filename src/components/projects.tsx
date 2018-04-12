@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Container } from 'reactstrap';
 import { fetchProjects } from '../utils/api';
 import Spinner from './common/spinner';
+import Header from './common/header';
 
 const ProjectWrapper = styled.div`
 	display: flex;
@@ -11,7 +12,7 @@ const ProjectWrapper = styled.div`
 `;
 
 const ProjectTitle = styled.h5`
-    font-weight: 350;
+    font-weight: 400;
     text-align: left;
     font-size: 1.1rem;
     margin-bottom: 0.25rem;
@@ -23,6 +24,22 @@ const ProjectTitle = styled.h5`
 
 const ProjectDescription = styled.div`
     padding: 0.4rem;
+`;
+
+const LinksContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+`;
+
+const FontLink: any = styled.a`
+    color: black;
+    font-size: ${(props: any) => props.github ? '0.85' : '1.15'}em !important;
+    &:hover {
+        text-decoration: none;
+        color: black;
+    }
 `;
 
 const ProjectGrid = ({ projects, match }) => {
@@ -44,13 +61,20 @@ const ProjectGrid = ({ projects, match }) => {
                                     <img src={project.image} style={{ borderRadius: 5, maxWidth: '100%' }} />
                                     <ProjectDescription>
                                         <ProjectTitle style={{ textTransform: 'uppercase', flexWrap: 'nowrap' }}>{project.title}</ProjectTitle>
-                                        <p style={{ color: '#4d4d4d', marginBottom: 0 }}className="d-none d-sm-block">{project.description}</p>
+                                        <p style={{ color: '#4d4d4d', marginBottom: 0, fontSize: 14 }}className="d-none d-sm-block">{project.description}</p>
                                     </ProjectDescription>
                                 </div>
                             {/* </Link> */}
-                            {project.url &&
-                                <a target="_blank" href={project.url} className="btn pull-right d-none d-sm-block" style={{ color: 'black', alignSelf: 'flex-end' }}><i className="fa fa-github fa-2x" /></a>
+                            <LinksContainer>
+                            <div>
+                                {project.url &&
+                                    <FontLink target="_blank" href={project.url} className="btn"><i className="fa fa-external-link" /></FontLink>
+                                }
+                            </div>
+                            {project.github_url &&
+                                <FontLink target="_blank" href={project.github_url} className="btn" github={true}><i className="fa fa-github fa-2x" /></FontLink>
                             }
+                            </LinksContainer>
                         </div>
                     </div>
                 );
@@ -106,8 +130,7 @@ export default class Projects extends React.PureComponent<any, State> {
         }
         return (
             <Container>
-                <h1 style={{ paddingTop: 5 }}>Projects</h1>
-                <hr />
+                <Header headerTitle="Projects" />
                 {this.state.isFetching ?
                     <Spinner />
                     :

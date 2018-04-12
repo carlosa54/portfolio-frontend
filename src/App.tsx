@@ -6,6 +6,7 @@ import Home from './components/home';
 import Projects from './components/projects';
 import Skills from './components/skills';
 import Experience from './components/experience';
+import Contact from './components/contact';
 
 injectGlobal`
   /* Styling Bootstrap's Navbar */
@@ -119,6 +120,7 @@ class App extends React.Component {
           <Route exact={true} path="/projects" component={Projects} />
           <Route exact={true} path="/skills" component={Skills} />
           <Route exact={true} path="/experience" component={Experience} />
+          <Route exact={true} path="/contact" component={Contact} />
           <Footer>
             <FooterText>Made by Carlos Ramírez <i className="fa fa-copyright" aria-hidden="true" /> {(new Date()).getFullYear()}</FooterText>
           </Footer>

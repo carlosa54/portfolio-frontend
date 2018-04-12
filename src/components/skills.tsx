@@ -5,6 +5,7 @@ import { Card, CardBody, Container } from 'reactstrap';
 import { Flex } from './common';
 import _ from 'lodash';
 import Spinner from './common/spinner';
+import Header from './common/header';
 
 const SkillsContainer = Flex.extend`
     align-items: flex-end;
@@ -44,12 +45,11 @@ export default class Skills extends React.PureComponent<Props, any> {
         const { skills } = this.state;
         return (
             <Container>
-                <h1 style={{ paddingTop: 5 }}>Skills</h1>
-                <hr />
+                <Header headerTitle="Skills" />
                 {!_.isEmpty(skills) ?
                     <Container>
-                        {Object.keys(skills).map((key) => (
-                            <Card style={{ marginBottom: 40 }}>
+                        {Object.keys(skills).map((key, index) => (
+                            <Card style={{ marginBottom: 40 }} key={index} >
                                 <CardBody>
                                     <h2 style={{ fontWeight: 200 }}>{key}</h2>
                                     <hr />

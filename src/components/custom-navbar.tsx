@@ -43,13 +43,13 @@ class CustomNavbar extends React.PureComponent<any, any> {
                             <NavLinkN onClick={this.toggleFromNavLink} tag={RouterLink} to="/experience">
                                 <NavItem>Experience</NavItem>
                             </NavLinkN>
-                            <NavLinkN onClick={this.toggleFromNavLink} tag={RouterLink} to="/about">
-                                <NavItem>About</NavItem>
+                            <NavLinkN onClick={this.toggleFromNavLink} tag={RouterLink} to="/contact">
+                                <NavItem>Contact</NavItem>
                             </NavLinkN>
                         </Nav>
                         <Nav className="ml-auto justify-content-center">
                             <NavLinkN href="https://github.com/carlosa54" target="_blank"><i className="fa fa-github fa-2x" /></NavLinkN>
-                            <NavLinkN href="https://www.linkedin.com/in/carlos-ramirez-0a9764133/" target="_blank"><i className="fa fa-linkedin-square fa-2x" /></NavLinkN>
+                            <NavLinkN href="https://www.linkedin.com/in/carlos-ramirez5" target="_blank"><i className="fa fa-linkedin-square fa-2x" /></NavLinkN>
                         </Nav>
                     </Collapse>
                 </Container>

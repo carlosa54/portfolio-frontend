@@ -6,7 +6,7 @@ const pdj = require('../img/python-django-logo.jpg');
 const rest = require('../img/dj-rest-framework.png');
 const psql = require('../img/postgresql.jpg');
 import styled from 'styled-components';
-import { Center, Flex, FlexColumn, RowContent } from './common';
+import { Center, Flex, FlexColumn } from './common';
 
 const Subtitle = styled.p`
 	font-family: 'Bookman';
@@ -27,7 +27,11 @@ const Name = styled.p`
 	padding-top 10px;
 `;
 
-const SliderImgItem = styled.img`
+const Image = styled.img`
+	max-width: 100%;
+`;
+
+const SliderItem = styled.div`
 	padding: 10px 30px;
 	flex-flow: row nowrap;
 	align-items: center;
@@ -78,19 +82,19 @@ export default class Home extends React.PureComponent<any, any> {
                     <div />
                     <div />
                 </TopSection>
-                <RowContent>
+                <div>
                     <br />
                     <Center>
                         <h3>Technology Stack used for portfolio</h3>
                     </Center>
                     <br />
-                    <Slider {...settings} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <SliderImgItem src={react} />
-                        <SliderImgItem src={pdj} />
-                        <SliderImgItem src={rest} />
-                        <SliderImgItem src={psql} />
+                    <Slider {...settings}>
+                        <SliderItem><Image src={react} /></SliderItem>
+                        <SliderItem><Image src={pdj} /></SliderItem>
+                        <SliderItem><Image src={rest} /></SliderItem>
+                        <SliderItem><Image src={psql} /></SliderItem>
                     </Slider>
-                </RowContent>
+                </div>
             </FlexColumn>
         );
     }
