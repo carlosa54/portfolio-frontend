@@ -6,13 +6,14 @@ interface State {
 }
 
 export default class Spinner extends React.PureComponent<any, State> {
-    interval: number;
+    interval: any;
     constructor(props) {
         super(props);
         this.state = {
             slowRequest: false,
             dots: ''
         };
+        this.interval = {}
     }
     componentDidMount() {
         const stopper = '...';
